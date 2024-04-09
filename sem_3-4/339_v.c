@@ -10,8 +10,8 @@ int main() {
     printf("Write len(b) n: ");
     scanf("%u", &n);
     
-    unsigned int b[n];
-    unsigned int a[m];
+     unsigned int b[n];
+     unsigned int a[m];
     
     for (unsigned int i = 0; i < m; i++) {
 		printf("Write characters in a[%u]: ", i + 1);
