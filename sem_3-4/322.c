@@ -1,23 +1,25 @@
 #include <stdio.h>
+#include <math.h>
+
 
 int main() {
     unsigned int n;
-    unsigned int sum = 0;
     unsigned int max_sum = 0;
     unsigned int max_number = 1;
+    unsigned int sum;
+    
     scanf("%u", &n);
     
-    for (unsigned int i = 0; i <= n / 2; i++) {
+
+    for (unsigned int i = n / 2; i <= n; i++) {
         sum = 0;
-        //printf("\n %u delitsy ", i);
-        for (unsigned int j = 1; j <= i / 2; j++) {
-            if (i % j == 0) {
+        for (unsigned int j = 1; j <= i / 2; j++)
+            if (i % j == 0)
                 sum += j;
-                //printf("%u ", j);
-            }
-        }
         
-        if (max_sum < sum) {
+        sum += i;
+        
+        if (sum > max_sum) {
             max_sum = sum;
             max_number = i;
         }
