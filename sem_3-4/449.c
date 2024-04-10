@@ -16,7 +16,7 @@ typedef struct {
 	double side31;
 } triangle;
 
-#define EPSILON 0.000001 // Отклонение
+
 
 // Длинна стороны
 double lenght_of_side(point p1 , point p2) {
@@ -54,7 +54,7 @@ int point_in_triangle(point p, triangle t) {
 	double s3 = square_of_triangle(lenght_of_side(p, t.p3), 
 		lenght_of_side(p, t.p1), lenght_of_side(t.p1, t.p3));
 	
-	if (fabs(t.square - (s1 + s2 + s3)) < EPSILON) {
+	if (fabs(t.square - (s1 + s2 + s3)) < 0.000001) {
 		return 1;
 	}
 		

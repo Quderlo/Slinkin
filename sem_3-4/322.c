@@ -7,10 +7,10 @@ int main() {
     unsigned int max_number = 1;
     scanf("%u", &n);
     
-    for (unsigned int i = 1; i <= n; i++) {
+    for (unsigned int i = 0; i <= n / 2; i++) {
         sum = 0;
         //printf("\n %u delitsy ", i);
-        for (unsigned int j = 1; j <= i; j++) {
+        for (unsigned int j = 1; j <= i / 2; j++) {
             if (i % j == 0) {
                 sum += j;
                 //printf("%u ", j);
