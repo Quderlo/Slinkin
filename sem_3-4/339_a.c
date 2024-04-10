@@ -3,7 +3,6 @@
 int main() {
     unsigned int m;
     char present;
-	unsigned int result = 0; 
 	
     printf("Write len(a) m: ");
     scanf("%u", &m);
@@ -26,10 +25,8 @@ int main() {
 			}
 		}
 		if (!present)
-			result++;
+			printf("%u ", a[i]);
 	}
-	
-	printf("%u", result);
     
     return 0;
 }

@@ -26,7 +26,7 @@ int main() {
 				continue;
 				
 			check_approximation = x - (a[i] + a[j]) / 2;
-			printf("%f = %f %f\n", check_approximation, a[i], a[j]);
+			//printf("%f = %f %f\n", check_approximation, a[i], a[j]);
 			if (approximation > check_approximation) {
 				ch1 = a[i];
 				ch2 = a[j];

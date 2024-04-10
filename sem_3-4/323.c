@@ -16,7 +16,7 @@ int main() {
             }
        }
 		if (mutually_simple) {
-		printf("%u ", i);
+			printf("%u ", i);
         }
         
     }

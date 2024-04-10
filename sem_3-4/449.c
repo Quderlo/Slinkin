@@ -13,6 +13,10 @@ typedef struct {
 	double square;
 } triangle;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> aa33b0890b06b842893f0b210b745b226718fed6
 
 // Длинна стороны
 double lenght_of_side(point p1 , point p2) {
