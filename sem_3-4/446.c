@@ -1,5 +1,17 @@
 #include <stdio.h>
 
+void func(char input_string[], unsigned int lenght, unsigned int num) {
+	for (unsigned int i = num - 1; i < lenght; i++) {
+        if (input_string[i] == '0') {
+            input_string[i] = '1';
+        } else if (input_string[i] == '1') {
+            input_string[i] = '0';
+        }
+    }
+	
+    printf("String is: %s\n", input_string);
+}
+
 int main() {
     unsigned int len = 1;
 	
@@ -17,17 +29,8 @@ int main() {
     printf("Write number when we start replacing 1 <= n <= %llu \n", 
 		sizeof(str) - 1);
     scanf("%u", &number);
-	
 
-    for (unsigned int i = number - 1; i < len; i++) {
-        if (str[i] == '0') {
-            str[i] = '1';
-        } else if (str[i] == '1') {
-            str[i] = '0';
-        }
-    }
-	
-    printf("String is: %s\n", str);
-	
+    func(str, len, number);
+    
     return 0;
 }
