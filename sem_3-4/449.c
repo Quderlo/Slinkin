@@ -41,8 +41,8 @@ triangle get_sides_and_square(triangle t) {
 // Если точка внутреннего треугольника находится на одной стороне с
 // третьей точкой внешнего треуголника функция вернёт 1 иначе 0
 int check_point_side(point p1, point p2, point p3, point p4){
-	double a = p1.y - p2.y;
-	double b = p2.x - p1.x;
+	double a = p2.y - p1.y;
+	double b = p1.x - p2.x;
 	double c = p1.x * (p1.y - p2.y) + p1.y * (p2.x - p1.x);
 	
 	printf("%f ", (a * p3.x + b * p3.y + c));
@@ -132,6 +132,7 @@ int main() {
 	triangle2.p3.x = 2, triangle2.p3.y = 0;	
 	*/
 	
+	/*
 	triangle1.p1.x = 0.2, triangle1.p1.y = 2;
 	triangle1.p2.x = 0.2, triangle1.p2.y = 1.4;
 	triangle1.p3.x = 1.6, triangle1.p3.y = 2;
@@ -139,6 +140,16 @@ int main() {
 	triangle2.p1.x = 0, triangle2.p1.y = 1.8;
 	triangle2.p2.x = 0, triangle2.p2.y = 1;
 	triangle2.p3.x = 2, triangle2.p3.y = 2;	
+	*/
+	
+	
+	triangle1.p1.x = 0.8, triangle1.p1.y = 0;
+	triangle1.p2.x = 2, triangle1.p2.y = 0.6;
+	triangle1.p3.x = 2, triangle1.p3.y = 0;
+	
+	triangle2.p1.x = 0, triangle2.p1.y = 0;
+	triangle2.p2.x = 1.8, triangle2.p2.y = 0.6;
+	triangle2.p3.x = 2, triangle2.p3.y = 0;	
 	
 	triangle1 = get_sides_and_square(triangle1);
 	triangle2 = get_sides_and_square(triangle2);
