@@ -11,7 +11,7 @@ int main() {
     scanf("%u", &n);
     
 
-    for (unsigned int i = n / 2; i <= n; i++) {
+    for (unsigned int i = sqrt(n); i <= n; i++) {
         sum = 0;
         for (unsigned int j = 1; j <= i / 2; j++)
             if (i % j == 0)

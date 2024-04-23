@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 
 int main() {
     unsigned int n;
@@ -9,7 +10,7 @@ int main() {
     for (unsigned int i = 1; i < n; i++) {
         //printf("\n %u delitsy ", i);
         mutually_simple = 1;
-        for (unsigned int j = 2; j <= i; j++) {
+        for (unsigned int j = 2; j <= sqrt(n); j++) {
             if (i % j == 0 && n % j == 0) {
 				mutually_simple = 0;
                 break;

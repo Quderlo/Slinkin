@@ -45,13 +45,16 @@ int check_point_side(point p1, point p2, point p3, point p4){
 	double b = p2.x - p1.x;
 	double c = p1.x * (p1.y - p2.y) + p1.y * (p2.x - p1.x);
 	
+	printf("%f ", (a * p3.x + b * p3.y + c));
+	printf("%f\n", (a * p4.x + b * p4.y + c));
+	
 	if ((a * p3.x + b * p3.y + c) * (a * p4.x + b * p4.y + c) >= 0)
 		return 1;
 	
 	return 0;
 }
 
-
+//Проверка на то что все точки лежат внутри
 int check_all_points_by_half_plane(triangle t1, triangle t2) {
 	int xy1 = check_point_side(t2.p1, t2.p2, t2.p3, t1.p1);
 	int xy2 = check_point_side(t2.p1, t2.p2, t2.p3, t1.p2);
@@ -65,11 +68,13 @@ int check_all_points_by_half_plane(triangle t1, triangle t2) {
 	int xy8 = check_point_side(t2.p1, t2.p3, t2.p2, t1.p2);
 	int xy9 = check_point_side(t2.p1, t2.p3, t2.p2, t1.p3);
 	
+	printf("%d %d %d %d %d %d %d %d %d\n", xy1, xy2, xy3, xy4, xy5, xy6, xy7, xy8, xy9);
 	if (xy1 && xy2 && xy3 && xy4 && xy5 && xy6 && xy7 && xy8 && xy9)
 		return 1;
 		
 	return 0;
 }
+
 
 // Если сумма площадей треугольников, образованных от вершины 
 // внутреннего треугольника и вершин внешнего, равна площади внешнего -
@@ -117,17 +122,26 @@ int main() {
 */	
 
 	//Тест
-	triangle1.p1.x = 0.5, triangle1.p1.y = 0/5;
+	/*
+	triangle1.p1.x = 0.5, triangle1.p1.y = 0.5;
 	triangle1.p2.x = 1, triangle1.p2.y = 0;
 	triangle1.p3.x = 1.5, triangle1.p3.y = 0.5;
 	
 	triangle2.p1.x = 0, triangle2.p1.y = 0;
 	triangle2.p2.x = 1, triangle2.p2.y = 1;
 	triangle2.p3.x = 2, triangle2.p3.y = 0;	
+	*/
+	
+	triangle1.p1.x = 0.2, triangle1.p1.y = 2;
+	triangle1.p2.x = 0.2, triangle1.p2.y = 1.4;
+	triangle1.p3.x = 1.6, triangle1.p3.y = 2;
+	
+	triangle2.p1.x = 0, triangle2.p1.y = 1.8;
+	triangle2.p2.x = 0, triangle2.p2.y = 1;
+	triangle2.p3.x = 2, triangle2.p3.y = 2;	
 	
 	triangle1 = get_sides_and_square(triangle1);
 	triangle2 = get_sides_and_square(triangle2);
-	
 	
 	if (check_all_points_by_square(triangle1, triangle2)) {
 		printf("Result: square = %lf\n", triangle2.square - triangle1.square);

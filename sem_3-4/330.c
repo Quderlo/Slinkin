@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 
 int main() {
     unsigned int n;
@@ -6,7 +7,7 @@ int main() {
 	
     scanf("%u", &n);
     
-    for (unsigned int i = 1; i < n; i++) {
+    for (unsigned int i = 1; i <= n / 2; i++) {
 		sum_del = 0;
         for (unsigned int j = 1; j < i; j++) {
             if (sum_del > i)
