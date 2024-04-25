@@ -1,22 +1,20 @@
 #include <stdio.h>
-#include <stdlib.h>
 
-char *string_replace(char *str, unsigned int len, unsigned int start) {
-    for (unsigned int i = 0; i < len; i++) {
-        modified_str[i] = str[i];
-    }
-
-    for (unsigned int i = start - 1; i < len; i++) {
-        if (modified_str[i] == '0') {
-            modified_str[i] = '1';
-        } else if (modified_str[i] == '1') {
-            modified_str[i] = '0';
+void func(char input_string[], unsigned int lenght, unsigned int num) {
+	if (num > lenght || num < 0) {
+		printf("Start number is not in array");
+		return;
+	}
+	
+	for (unsigned int i = num - 1; i < lenght; i++) {
+        if (input_string[i] == '0') {
+            input_string[i] = '1';
+        } else if (input_string[i] == '1') {
+            input_string[i] = '0';
         }
     }
-    
-    modified_str[len] = '\0';
-
-    return modified_str;
+	
+    printf("String is: %s\n", input_string);
 }
 
 int main() {
@@ -33,14 +31,11 @@ int main() {
     fgets(str, sizeof(str), stdin);
     
     unsigned int number;
-    printf("Write number when we start replacing 1 <= n <= %u \n", len);
+    printf("Write number when we start replacing 1 <= n <= %llu \n", 
+		sizeof(str) - 1);
     scanf("%u", &number);
-	
-    char *modified_str = string_replace(str, len, number);
-	
-    printf("String is: %s\n", modified_str);
-	
-    free(modified_str);
 
+    func(str, len, number);
+    
     return 0;
 }

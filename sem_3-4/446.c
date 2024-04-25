@@ -1,6 +1,11 @@
 #include <stdio.h>
 
 void func(char input_string[], unsigned int lenght, unsigned int num) {
+	if (num > lenght || num < 0) {
+		printf("Start number is not in array");
+		return;
+	}
+	
 	for (unsigned int i = num - 1; i < lenght; i++) {
         if (input_string[i] == '0') {
             input_string[i] = '1';
