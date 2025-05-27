@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define testbitM(A, B) (((B) >= 0 && (B) < 64) ? ( ((A) & (1LL << (B))) ? 1 : 0 ) : -1 )
+#define testbitM(A, B) (((B) >= 0 && (B) < 64) ? ( ((A) & (1 << (B))) ? 1 : 0 ) : -1 )
 
 
 void BinaryView(long long int num) {
