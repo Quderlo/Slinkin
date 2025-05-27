@@ -1,27 +1,28 @@
 #include <stdio.h>
-#include <math.h>
 
-int main() {
+int main(void) {
     unsigned int n;
-    unsigned int sum_del = 0;
-	
     scanf("%u", &n);
-    
-    for (unsigned int i = 1; i <= n / 2; i++) {
-		sum_del = 0;
-        for (unsigned int j = 1; j < i; j++) {
-            if (sum_del > i)
-				break;
-				
-			if (i % j == 0)
-				sum_del += j;
-			
-       }
-       
-		if (sum_del == i) {
-			printf("%u ", i);
+
+    for (unsigned int i = 2; i < n; ++i) {
+        unsigned int sum_del = 1;
+
+
+        for (unsigned int j = 2; j * j <= i; ++j) {
+            if (i % j == 0) {
+                sum_del += j;
+
+                unsigned int k = i / j;    //100 / 2 = 50
+                if (k != j)
+                    sum_del += k;
+
+                if (sum_del > i)
+                    break;
+            }
         }
-        
+
+        if (sum_del == i)
+            printf("%u ", i);
     }
     return 0;
 }
