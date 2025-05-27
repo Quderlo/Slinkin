@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define maxM(A, B, C) ((A > B && A > C) ? A : (B > A && B > C) ? B : C)
+#define maxM(A, B, C) (((A) > (B) && (A) > (C)) ? (A) : ((B) > (A) && (B) > (C)) ? (B) : (C))
 
 int main() {
     int A, B, C;
