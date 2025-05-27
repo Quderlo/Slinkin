@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#define squarenumM(A,B,C) ((B * B - 4 * A * C) < 0 ? 0 : ((B * B - 4 * A * C) > 0 ? 2 : 1))
+#define squarenumM(A,B,C) (((B) * (B) - 4 * (A) * (C)) < 0 ? 0 : (((B) * (B) - 4 * (A) * (C)) > 0 ? 2 : 1))
 
 int main() {
     int A, B, C;
